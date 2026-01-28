@@ -4,7 +4,7 @@ This is my personal portfolio website built to showcase my projects and skills a
 
 
 ## Live Demo
-https://jose-shajan.github.io/my_portfolio/
+[Visit Demo](https://jose-shajan.github.io/my_portfolio/)
 
 
 ## Technologies Used
