@@ -223,6 +223,9 @@ h2 {
 .project-card a:hover{
   color: var(--accent);
 }
+.project-link{
+  margin-right: 18px;
+}
 
 
 .contact-options{
