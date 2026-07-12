@@ -1,25 +1,49 @@
 
-/*color theme*/
+/* =====================================================
+   1. VARIABLES
+===================================================== */
+
 :root {
-  --primary: #0C7779;   
-  --dark: #005461;      
-  --accent: #249E94;    
-  --light: #3BC1A8;     
-  --bg: #f4fffd;        
+  --primary: #0C7779;
+  --dark: #005461;
+  --accent: #249E94;
+  --light: #3BC1A8;
+
+  --bg: #f4fffd;
+
   --text-dark: #083b3d;
   --text-light: #ffffff;
+  --text-secondary: #666;
+
+  --border-radius: 12px;
+  --transition: .3s ease;
+  --shadow: 0 5px 12px rgba(0,0,0,.08);
 }
 
+/* =====================================================
+   2. RESET
+===================================================== */
 
-html,body {
-  margin: 0;
-  padding: 0;
-  background-color: var(--bg);
-  color: var(--text-dark);
-  overflow-x: hidden;
-    font-family: 'Trebuchet MS', Arial, sans-serif;
-
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
 }
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Trebuchet MS', Arial, sans-serif;
+    background:var(--bg);
+    color:var(--text-dark);
+    overflow-x:hidden;
+}
+
+/* =====================================================
+   3. NAVBAR
+===================================================== */
 
 
 #home {
@@ -78,16 +102,18 @@ html,body {
 }
 
 
-h2 {
-  text-align: justify;
-  font-size: 50px;
-  text-align: center;
-  float: left;
-  color: var(--primary);
-  margin: 30px;
-  margin-left: 60px;
-  margin-top: 40px;
-  margin-bottom: 0px;
+/* =====================================================
+   4. SECTION HEADINGS
+===================================================== */
+
+.skill-title,
+.projects h2,
+.contact-head,
+.introduction {
+    font-size: 50px;
+    color: var(--primary);
+    text-align: center;
+    margin: 40px 0;
 }
 
 .introduction {
@@ -101,46 +127,128 @@ h2 {
   position: relative;
 }
 
+/* =====================================================
+   5. HERO
+===================================================== */
 
-.container {
-  display: flex;
+.hero-container{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+    padding:70px 8%;
 }
 
-.about-me {
-  display: flex;
-  align-items: center;
-}
-.about-text{
-  margin-top: 30px;
-  margin-left: 30px;
-  margin-right: 20px;
-}
+#about-me{
 
-#about-me h1 {
-  font-size: 65px;
-  margin-top: 90px;
-  color: var(--primary);
-}
+    min-height:90vh;
 
-#about-me p {
-  font-size: 25px;
-  color: rgb(128, 128, 128);
-  margin-top: -1cm;
-  line-height: 1.4;
 }
 
 .profile_image {
-  width: 400px;
-  height: 400px;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 4px solid #249E94;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  margin-top: 100px;
-  margin-bottom: 20px;
-  margin-left: 40px;
+    width:380px;
+    height:380px;
+    object-fit:cover;
+    border-radius:50%;
+    border:5px solid var(--accent);
+    box-shadow:0 12px 30px rgba(0,0,0,.18);
+    transition:var(--transition);
+}
+.profile_image:hover{
+  transform:scale(1.03);
 }
 
+.about-text{
+    max-width:700px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.hero-greeting{
+    font-size:24px;
+    color: var(--text-secondary);
+    margin-bottom:10px;
+}
+
+#about-me h1{
+    font-size:64px;
+    margin:0;
+    color:var(--primary);
+    line-height:1.1;
+}
+
+.hero-title{
+    font-size:34px;
+    margin:18px 0 5px;
+    font-weight:700;
+    color:#222;
+}
+
+.hero-subtitle{
+    font-size:28px;
+    font-weight:600;
+    color:var(--accent);
+    margin-bottom:25px;
+}
+
+.hero-description{
+    font-size:21px;
+    line-height:1.8;
+    color: var(--text-secondary);
+}
+
+.hero-buttons{
+
+    display:flex;
+    gap:18px;
+
+    margin:35px 0;
+
+    flex-wrap:wrap;
+
+}
+
+.btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    padding:14px 30px;
+    border:2px solid var(--primary);
+    border-radius:var(--border-radius);
+    color:var(--primary);
+    background:transparent;
+    text-decoration:none;
+    font-weight:600;
+    transition:var(--transition);
+}
+
+.btn:hover{
+    background:var(--primary);
+    color:#fff;
+    transform:translateY(-2px);
+}
+
+.hero-highlights{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:15px;
+}
+
+.hero-highlights span{
+    background:white;
+    border:1px solid rgba(0,0,0,.08);
+    padding:10px 18px;
+    border-radius:30px;
+    font-size:15px;
+    box-shadow:var(--shadow);
+}
+
+/* =====================================================
+   6. SKILLS
+===================================================== */
 
 .all_skills {
   display: flex;
@@ -156,7 +264,7 @@ h2 {
   text-align: center;
   margin: 50px;
   padding: 10px;
-  width: 2in;
+  width: 220px;
   font-size: 20px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.15);
 }
@@ -185,12 +293,14 @@ h2 {
   margin-block-end: 5px;
 } 
 
-.flex_center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+/* =====================================================
+   7. EXPERIENCE
+===================================================== */
 
+
+/* =====================================================
+   8. FEATURED WORK
+===================================================== */
 
 .projects-container {
   margin-top: 30px;
@@ -228,6 +338,9 @@ h2 {
   margin-right: 18px;
 }
 
+/* =====================================================
+   9. CONTACT
+===================================================== */
 
 .contact-options{
   margin-left: 120px;
@@ -246,8 +359,6 @@ h2 {
   width: 26px;
   display: inline-block;
   vertical-align: top;
-
-  
 }
 .contact-para{
   display: inline-block;
@@ -257,7 +368,17 @@ h2 {
 }
 .contact-options li{
   font-size: 20px;
-  
+}
+
+
+/* =====================================================
+   10. RECOMMENDATION FORM
+===================================================== */
+
+.flex_center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .all_recommendations {
@@ -276,7 +397,7 @@ h2 {
   padding: 1rem;
   background-color: #fff;
   border-radius: 11px;
-  box-shadow: 0 3px 10px var(--primary-shadow);
+  box-shadow: var(--shadow);
   padding: 20px;
   margin: 10px;
   border:1px solid gray;
@@ -290,104 +411,6 @@ h2 {
   font-family: 'Times New Roman', Times, serif;
 }
 
-.iconbutton{
-  width: 48px;
-  height: 48px;
-  border-radius: 100%;
-  background-color: var(--primary);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  right: 3%;
-  bottom: 3%;
-  cursor: pointer;
-}
-.iconbutton img{
-  width: 62px;
-}
-
-.popup {
-  width: 400px;
-  background-color: #e8f7f5;
-  border-radius: 12px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  position: fixed;
-  padding: 25px;
-  visibility: hidden;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  border: 2px solid #249E94;
-}
-.popup button {
-  display: inline-block;   
-  margin: 20px auto 0 auto; 
-  width: auto;             
-  min-width: 120px;        
-}
-
-.popup h3 {
-  color: #005461;
-  margin-top: 15px;
-  font-size: 20px;
-}
-
-.popup img {
-  width: 60px;
-}
-
-.popup button {
-  background-color: #0C7779;
-  color: white;
-  border: none;
-  border-radius: 6px;
-  padding: 10px 20px;
-  margin-top: 20px;
-  cursor: pointer;
-}
-
-.popup button:hover {
-  background-color: #005461;
-}
-
-
-footer {
-    background-color: var(--dark); 
-    color: var(--text-light); 
-    text-align: center; 
-    padding: 20px 0; 
-    width: 100%; 
-    footer {
-    margin-bottom: 0;
-}
-
-    
-}
-footer a{
-  text-decoration: none;
-  color: var(--text-light);
-  display: inline-block;
-}
-footer a:hover{
-  color: var(--accent);
-}
-
-.footer-email-icon{
-  width: 25px;
-  display: inline-block;
-  vertical-align: top;
-  
-}
-
-
-input, textarea {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
-  margin: 10px;  
-  width:100%;
-}
-
 fieldset {
   display: flexbox;
   align-content: center;
@@ -397,7 +420,12 @@ fieldset {
   margin-right: 50px;   
   border: thin solid white;
   width: 50%;
-  
+}
+
+input, textarea {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; 
+  margin: 10px;  
+  width:100%;
 }
 
 button {
@@ -420,12 +448,172 @@ button:hover {
   cursor: pointer;
 }
 
-/*for large screen*/
-@media (min-width: 992px) {
-  .about-text {
-    margin-top: 90px;
-    margin-left: 100px;
-  }
+/* =====================================================
+   11. POPUP
+===================================================== */
+
+.popup {
+  width: 400px;
+  background-color: #e8f7f5;
+  border-radius:var(--border-radius);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  position: fixed;
+  padding: 25px;
+  visibility: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  border: 2px solid #249E94;
+}
+.popup button{
+    display:inline-block;
+    margin:20px auto 0;
+    min-width:120px;
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    border-radius:6px;
+    padding:10px 20px;
+    cursor:pointer;
+}
+
+.popup button:hover {
+  background-color: #005461;
+}
+
+.popup h3 {
+  color: #005461;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.popup img {
+  width: 60px;
+}
+
+/* =====================================================
+   12. FOOTER
+===================================================== */
+
+footer{
+    background-color: var(--dark);
+    color: var(--text-light);
+    text-align:center;
+    padding:20px 0;
+    width:100%;
+    margin-bottom:0;
+}
+
+footer a{
+  text-decoration: none;
+  color: var(--text-light);
+  display: inline-block;
+}
+footer a:hover{
+  color: var(--accent);
+}
+
+.footer-email-icon{
+  width: 25px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* =====================================================
+   13. BACK TO TOP
+===================================================== */
+
+.iconbutton{
+  width: 48px;
+  height: 48px;
+  border-radius: 100%;
+  background-color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  right: 3%;
+  bottom: 3%;
+  cursor: pointer;
+}
+.iconbutton img{
+  width: 62px;
+}
+
+/* =====================================================
+   14. RESPONSIVE
+===================================================== */
+
+@media (max-width:768px){
+
+    .hero-container{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+        gap:40px;
+        padding:25px 20px;
+    }
+
+    .about-text{
+        max-width:100%;
+        align-items:center;
+    }
+
+    .profile_image{
+      width:220px;
+      height:220px;
+    }
+
+    #about-me h1{
+    font-size:42px;
+    }
+
+    .hero-greeting{
+        font-size:22px;
+    }
+
+    .hero-title{
+        font-size:24px;
+        margin-top:15px;
+        margin-bottom:2px;
+    }
+
+    .hero-subtitle{
+        font-size:20px;
+        margin-bottom:18px;
+    }
+
+    .hero-description{
+        font-size:19px;
+        line-height:1.8;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+        width:100%;
+    }
+
+    .btn{
+
+        padding:12px 24px;
+
+    }
+
+    .hero-highlights{
+        justify-content:center;
+    }
+
+    .topmenu{
+        font-size:15px;
+        margin:3px;
+        padding:8px;
+    }
+
+    #about-me{
+        min-height:auto;
+    }
+
 }
 
 
