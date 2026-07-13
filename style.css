@@ -1,3 +1,7 @@
+html,
+body{
+    overflow-x:hidden;
+}
 
 /* =====================================================
    1. VARIABLES
@@ -46,61 +50,59 @@ body{
 ===================================================== */
 
 
-#home {
-  background-color:  var(--primary);
-  padding-bottom: 2cm;
-  padding-top: 2cm;
-  height: 5mm;
- }
-
-.topmenu {
-  color: var(--text-light);
-  margin: 10px;
-  padding: 20px;
-  font-size: 20px;
-  text-decoration:none;
+.custom-navbar .container-fluid{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 28px;
 }
 
-.topmenu:hover {
-  color: var(--light);
+.custom-navbar{
+    background:var(--primary);
+    padding:14px 0;
+    box-shadow:0 4px 15px rgba(0,0,0,.12);
 }
 
-.topdiv {
-  float: right;
-  padding-right: 1cm;
+.navbar-brand{
+    color: var(--text-light) !important;
+    font-size: 1.35rem;
+    font-weight: 700;
+    transition: var(--transition);
+    margin-left: 30px;
 }
 
-.profile_name {
-  float: left;
-  padding-left: 2cm;
-}
-.my_name{
-  padding-bottom: 0px;
-  padding-left: 5px;
+.navbar-brand:hover{
+    color: #d8fff8 !important;
 }
 
-.profile_name .contact_info {
-  font-size: 15px;
-  font-style: italic;
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+.brand-name{
+    letter-spacing:.5px;
+    font-weight:700;
 }
 
-.contact_info img {
-  width:24px;
-  margin-right: 10px;
-  float:left;
-}
-.contact_info a{
-  text-decoration: none;
-  color: var(--text-dark);
-  
-}
-.contact_info a:hover{
-  color: black;
+.nav-link{
+    color: var(--text-light) !important;
+    margin-left: 18px;
+    font-weight: 500;
+    transition: var(--transition);
+    border-radius: 8px;
+    padding: 8px 12px !important;
 }
 
+.nav-link:hover{
+    background: rgba(255,255,255,.12);
+    color: #fff !important;
+}
+
+.navbar-toggler{
+    border: none;
+    box-shadow: none !important;
+}
+
+.navbar-toggler:hover{
+    background: rgba(255,255,255,.12);
+    border-radius: 8px;
+}
 
 /* =====================================================
    4. SECTION HEADINGS
@@ -142,6 +144,7 @@ body{
 #about-me{
 
     min-height:90vh;
+    padding-top:130px;
 
 }
 
@@ -210,7 +213,7 @@ body{
 
 }
 
-.btn{
+.hero-btn{
     display:inline-flex;
     align-items:center;
     justify-content:center;
@@ -224,7 +227,7 @@ body{
     transition:var(--transition);
 }
 
-.btn:hover{
+.hero-btn:hover{
     background:var(--primary);
     color:#fff;
     transform:translateY(-2px);
@@ -415,11 +418,11 @@ fieldset {
   display: flexbox;
   align-content: center;
   justify-content: center;  
-  padding: 25px; 
-  margin-left: 50px; 
-  margin-right: 50px;   
+  padding: 25px;  
+  margin:0 auto; 
   border: thin solid white;
-  width: 50%;
+  width: 100%;
+  max-width: 500px;
 }
 
 input, textarea {
@@ -545,19 +548,159 @@ footer a:hover{
    14. RESPONSIVE
 ===================================================== */
 
+
+/* -----------------------------
+   Desktop (992px and above)
+------------------------------ */
+
+@media (min-width:992px){
+
+    .navbar-collapse{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .navbar-nav{
+        gap: 30px;
+        margin-right:clamp(60px,8vw,150px);
+    }
+
+    .nav-link{
+        margin-left:0;
+        padding:8px 10px !important;
+        display:flex;
+        align-items:center;
+        gap:8px;
+        position:relative;
+        transition:all .25s ease;
+    }
+
+    .nav-link:hover{
+        transform:translateY(-2px);
+    }
+
+    .nav-link::after{
+        content:"";
+        position:absolute;
+        left:12px;
+        bottom:4px;
+        width:0;
+        height:2px;
+        background:white;
+        transition:.3s;
+    }
+
+    .nav-link:hover::after{
+        width:calc(100% - 24px);
+    }
+
+    .nav-link i{
+        color:#fff;
+        font-size:0.95rem;
+    }
+}
+
+
+/* -----------------------------
+   Tablet + Mobile (991px and below)
+------------------------------ */
+
+@media (max-width:991.98px){
+
+  .navbar-toggler{
+      border:none;
+      padding:.25rem .5rem;
+    }
+  
+  .navbar-toggler:hover{
+      background:rgba(255,255,255,.22);
+    }
+
+  .navbar-toggler:focus{
+      box-shadow:none;
+    }
+
+  .navbar-toggler i{
+      color:white;
+      font-size:1.5rem;
+    }
+
+  .navbar-brand{
+      margin-left: 0px;
+      font-size:0.9rem !important;
+      font-weight:500;
+    }
+
+  .navbar-collapse{
+    width:90%;
+    margin-top:20px;
+    margin:15px auto 0;
+    background:#ffffff;
+    border-radius:16px;
+    padding:12px;
+    box-shadow:0 15px 40px rgba(0,0,0,.18);
+    transition: all .35s ease;
+
+  }
+
+  .navbar-nav{
+    gap:8px;
+  }
+
+  .nav-link{
+    color:var(--text-dark) !important;
+    margin:0;
+    padding:12px 16px !important;
+    border-radius:10px;
+    font-size:17px;
+    transition: all .25s ease;
+  }
+
+  .nav-link:hover{
+    background:#eef9f8;
+    transform: translateX(8px);
+    color:var(--primary) !important;
+
+  }
+
+  .nav-link.active{
+    background:var(--primary);
+    color:white !important;
+    border-radius: 10px;
+  }
+
+  .nav-link i{
+    color:var(--primary);
+  }
+
+    
+  .custom-navbar .container-fluid{
+    padding-inline:16px;
+  }
+}
+
+/* -----------------------------
+   Mobile Only (768px and below)
+------------------------------ */
+
 @media (max-width:768px){
 
     .hero-container{
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
-        gap:40px;
-        padding:25px 20px;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      width:100%;
+      padding:25px 20px;
+      gap:18px;
     }
 
     .about-text{
-        max-width:100%;
-        align-items:center;
+      width: 100%;
+      max-width:340px;
+      align-items:center;
+      margin:0 auto;
     }
 
     .profile_image{
@@ -566,54 +709,65 @@ footer a:hover{
     }
 
     #about-me h1{
-    font-size:42px;
+      font-size:42px;
     }
 
     .hero-greeting{
-        font-size:22px;
+      font-size:22px;
     }
 
     .hero-title{
-        font-size:24px;
-        margin-top:15px;
-        margin-bottom:2px;
+      font-size:24px;
+      margin-top:15px;
+      margin-bottom:2px;
     }
 
     .hero-subtitle{
-        font-size:20px;
-        margin-bottom:18px;
+      font-size:20px;
+      margin-bottom:18px;
     }
 
     .hero-description{
-        font-size:19px;
-        line-height:1.8;
+      font-size:19px;
+      line-height:1.8;
+      max-width:300px;
+      margin:0 auto;
     }
 
     .hero-buttons{
-        justify-content:center;
-        width:100%;
+      display:flex;
+      justify-content:center;
+      flex-wrap:wrap;
+      gap:12px;
     }
 
-    .btn{
-
-        padding:12px 24px;
-
+    .hero-btn{
+      min-width:120px;
+      width: auto;
+      padding:8px 18px;
+      font-size:0.9rem;
+      min-height:40px;
     }
 
     .hero-highlights{
-        justify-content:center;
-    }
-
-    .topmenu{
-        font-size:15px;
-        margin:3px;
-        padding:8px;
+      justify-content:center;
     }
 
     #about-me{
-        min-height:auto;
+      min-height:auto;
+      padding-top: 70px;
     }
 
+    .iconbutton{
+      right:20px;
+      bottom:20px;
+    }
+
+    .contact-options{
+      margin:0;
+      display:flex;
+      justify-content:center;
+    }
 }
 
 

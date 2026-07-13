@@ -34,4 +34,30 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+const navbarCollapse = document.getElementById("navbarNav");
+const menuIcon = document.getElementById("menuIcon");
+
+// Menu opened
+navbarCollapse.addEventListener("shown.bs.collapse", () => {
+    menuIcon.className = "bi bi-x";
+});
+
+// Menu closed
+navbarCollapse.addEventListener("hidden.bs.collapse", () => {
+    menuIcon.className = "bi bi-list";
+});
+
+// Close menu when a link is clicked
+document.querySelectorAll(".nav-link").forEach(link => {
+    link.addEventListener("click", () => {
+
+        const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse);
+
+        if (bsCollapse) {
+            bsCollapse.hide();
+        }
+
+    });
+});
+
 
