@@ -8,7 +8,7 @@ function showPopup(show, message = "") {
     if (show) {
         popup.style.visibility = "visible";
         popup.style.opacity = "1";
-        popupMessage.textContent = message;
+        popupMessage.innerHTML = message;
     } else {
         popup.style.visibility = "hidden";
         popup.style.opacity = "0";
@@ -69,7 +69,7 @@ form.addEventListener("submit", function (e) {
 
         showPopup(
             true,
-            "Message sent successfully! I'll get back to you soon."
+            "Message sent successfully!<br>I'll get back to you soon."
         );
 
         // Auto close popup after 3 seconds
@@ -79,9 +79,7 @@ form.addEventListener("submit", function (e) {
 
     })
     .catch((error) => {
-
         console.error("EmailJS Error:", error);
-
         showPopup(
             true,
             "Failed to send message. Please try again."

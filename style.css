@@ -1699,6 +1699,31 @@ body{
     font-size: 1.2rem;
   }
 
+  .popup {
+        width: 90%;
+        max-width: 320px;
+        padding: 18px;
+        border-radius: 14px;
+    }
+
+    .popup img {
+        width: 55px;
+        height: 55px;
+        margin-bottom: 12px;
+    }
+
+    .popup p {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin: 0;
+    }
+
+    .popup button {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+        margin-top: 18px;
+    }
+
   .availability-badge{
     display: flex;
     justify-content: center;
