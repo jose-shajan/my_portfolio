@@ -1,26 +1,44 @@
-# Personal Portfolio Website
+<h1 align="center">💼 Josekutty Shajan Portfolio</h1>
 
-This is my personal portfolio website built to showcase my projects and skills as a frontend learner.
+<p align="center">
+  <img src="img/portfolio-preview.png" alt="Portfolio Preview" width="900">
+</p>
 
+A modern and responsive personal portfolio showcasing my projects, technical skills, certifications, and experience as a Front-End Developer.
 
-## Live Demo
-[Visit Demo](https://jose-shajan.github.io/my_portfolio/)
+## 🚀 Live Demo
 
+🔗 https://jose-shajan.github.io/my_portfolio/
 
-## Technologies Used
-- HTML
-- CSS
+## ✨ Features
+
+- Responsive Design
+- Modern UI/UX
+- Project Showcase
+- Skills Section
+- Experience Timeline
+- Certifications
+- Contact Form (EmailJS)
+- Smooth Scrolling
+- Back to Top Button
+
+## 🛠 Tech Stack
+
+- HTML5
+- CSS3
+- Bootstrap 5
 - JavaScript
+- EmailJS
 
+## 📂 Getting Started
 
-## Features
-- About me section
-- Skills section
-- Projects section
-- Contact section
-- 
+```bash
+git clone https://github.com/jose-shajan/my_portfolio.git
+```
 
-## Future Improvements
-- Add more projects
-- Improve mobile responsiveness
-- Add animations
+Open `index.html` in your browser.
+
+## 📬 Contact
+
+- **Email:** joseshajan72@gmail.com
+- **LinkedIn:** https://www.linkedin.com/in/josekutty-shajan-13962236a/
